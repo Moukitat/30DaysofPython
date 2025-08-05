@@ -1,0 +1,17 @@
+Niveau 1
+1. Différences entre map, filter, reduce
+map : applique une fonction à chaque élément d'une liste et retourne une nouvelle liste des résultats.
+
+filter : filtre une liste en gardant uniquement les éléments qui satisfont une condition.
+
+reduce : applique une fonction cumulativement à la liste pour réduire la liste à une seule valeur (ex: somme, 
+concaténation).
+
+2. Différences entre une fonction d'ordre supérieur, fermeture (closure), décorateur
+fonction d'ordre supérieur : une fonction qui prend une autre fonction en argument, ou la retourne.
+
+fermeture (closure) : une fonction interne qui se souvient des variables de son contexte extérieur même après
+ son exécution.
+
+décorateur : une fonction qui modifie/refactorise une autre fonction sans changer son code source,
+ souvent via une fonction d'ordre supérieur.
