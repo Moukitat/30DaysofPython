@@ -1,0 +1,64 @@
+import re
+from collections import Counter
+
+                    # Exercice Level 1
+#1-) 
+paragraph = '''I love teaching. If you do not love teaching
+what else can you love. I love Python if you do not love
+something which can give you all the capabilities to develop
+an application what else can you love.'''
+
+def most_frequent_word(text):
+    words = re.findall(r'\b\w+\b', text.lower())
+    counts = Counter(words)
+    most_common = counts.most_common()
+    return [(freq, word) for word, freq in most_common]
+
+freq_words = most_frequent_word(paragraph)
+print(freq_words)
+
+#2-) 
+points = ['-12', '-4', '-3', '-1', '0', '4', '8']
+sorted_points = sorted(map(int, points))
+distance = sorted_points[-1] - sorted_points[0]
+print("Points triés :", sorted_points)
+print("Distance entre les deux particules les plus éloignées :", distance)
+
+                    #Exercice Level 2  
+
+
+#-)
+def is_valid_variable(variable):
+    pattern = r'^[a-zA-Z_][a-zA-Z0-9_]*$'
+    return bool(re.match(pattern, variable))
+
+print("\nNiveau 2 - Exercice 1 :")
+print("is_valid_variable('first_name') ->", is_valid_variable('first_name'))    # True
+print("is_valid_variable('first-name') ->", is_valid_variable('first-name'))    # False
+print("is_valid_variable('1first_name') ->", is_valid_variable('1first_name'))  # False
+print("is_valid_variable('firstname') ->", is_valid_variable('firstname'))      # True
+
+                    #Exercice Level 3 
+
+
+#1-)
+sentence = '''%I $am@% a %tea@cher%, &and& I lo%#ve
+%tea@ching%;. There $is nothing; &as& mo@re rewarding as
+educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching
+m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s
+mo@tivate yo@u to be a tea@cher!?'''
+
+def clean_text(text):
+    cleaned = re.sub(r'[^a-zA-Z0-9\s]', '', text)
+    return cleaned
+
+def most_frequent_words(text, n=3):
+    words = text.lower().split()
+    counts = Counter(words)
+    return counts.most_common(n)
+
+cleaned_text = clean_text(sentence)
+print("\nNiveau 3 - Exercice 1 :")
+print("Texte nettoyé :", cleaned_text)
+freq_three = most_frequent_words(cleaned_text)
+print("Trois mots les plus fréquents :", freq_three)
