@@ -1,0 +1,40 @@
+import pandas as pd
+
+# 1-) Lire le fichier hacker_news.csv depuis le répertoire data
+df = pd.read_csv('data/hacker_news.csv')
+
+# 2-) Obtenir les cinq premières lignes
+print("Premières 5 lignes:")
+print(df.head())
+
+# 3-) Obtenir les cinq dernières lignes
+print("\nDernières 5 lignes:")
+print(df.tail())
+
+# 4-) Extraire la colonne "title" en tant que Series pandas
+titles = df['title']
+print("\nTitres extraits (Series):")
+print(titles.head())
+
+# 5-) Compter le nombre de lignes et de colonnes
+rows, cols = df.shape
+print(f"\nNombre de lignes: {rows}, Nombre de colonnes: {cols}")
+
+# Filtrer les titres contenant "python" (insensible à la casse)
+python_titles = df[df['title'].str.contains('python', case=False, na=False)]
+print(f"\nTitres contenant 'python' ({len(python_titles)} occurrences):")
+print(python_titles['title'].head())
+
+# Filtrer les titres contenant "JavaScript" (insensible à la casse)
+js_titles = df[df['title'].str.contains('javascript', case=False, na=False)]
+print(f"\nTitres contenant 'JavaScript' ({len(js_titles)} occurrences):")
+print(js_titles['title'].head())
+
+# Exploration simple : aperçu des colonnes et types
+print("\nAperçu des colonnes et types :")
+print(df.info())
+
+# Statistiques descriptives sur données numériques (le cas échéant)
+print("\nStatistiques descriptives :")
+print(df.describe(include='all'))
+
