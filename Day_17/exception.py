@@ -1,6 +1,6 @@
-#Exercice jour 17
+# Exercice jour 17
 
-names = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland', 'Estonia', 'Russia']
+names = ["Finland", "Sweden", "Norway", "Denmark", "Iceland", "Estonia", "Russia"]
 
 nordic_countries = names[:5]
 

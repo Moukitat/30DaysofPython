@@ -4,7 +4,8 @@ import subprocess
 import platform
 from pathlib import Path
 
-def create_project_with_venv(project_path, venv_name='venv'):
+
+def create_project_with_venv(project_path, venv_name="venv"):
     project_dir = Path(project_path).expanduser().resolve()
     if not project_dir.exists():
         project_dir.mkdir(parents=True)
@@ -18,13 +19,15 @@ def create_project_with_venv(project_path, venv_name='venv'):
         print(f"L'environnement virtuel {venv_name} existe déjà dans le projet.")
     else:
         print(f"Création de l'environnement virtuel '{venv_name}' ...")
-        subprocess.check_call([sys.executable, '-m', 'venv', str(venv_path)])
+        subprocess.check_call([sys.executable, "-m", "venv", str(venv_path)])
         print(f"Environnement virtuel créé dans : {venv_path}")
 
     os_name = platform.system()
-    if os_name == 'Windows':
+    if os_name == "Windows":
         activate_command = f"{venv_name}\\Scripts\\activate"
-        print("\nPour activer votre environnement virtuel sous Windows PowerShell, tapez :")
+        print(
+            "\nPour activer votre environnement virtuel sous Windows PowerShell, tapez :"
+        )
         print(activate_command)
     else:
         activate_command = f"source {venv_name}/bin/activate"
@@ -37,5 +40,6 @@ def create_project_with_venv(project_path, venv_name='venv'):
     print("\nPour désactiver l'environnement virtuel, tapez :")
     print("deactivate")
 
-if __name__ == '__main__':
-    create_project_with_venv('./flask_project')
+
+if __name__ == "__main__":
+    create_project_with_venv("./flask_project")

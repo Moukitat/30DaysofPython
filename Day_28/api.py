@@ -11,13 +11,13 @@ students = {
 
 
 # Récupérer tous les étudiants
-@app.route('/students', methods=['GET'])
+@app.route("/students", methods=["GET"])
 def get_students():
     return jsonify(students)
 
 
 # Récupérer un étudiant par ID
-@app.route('/students/<int:student_id>', methods=['GET'])
+@app.route("/students/<int:student_id>", methods=["GET"])
 def get_student(student_id):
     student = students.get(student_id)
     if student:
@@ -27,23 +27,23 @@ def get_student(student_id):
 
 
 # Créer un nouvel étudiant
-@app.route('/students', methods=['POST'])
+@app.route("/students", methods=["POST"])
 def create_student():
     data = request.get_json()
-    if not data or 'name' not in data or 'country' not in data or 'age' not in data:
+    if not data or "name" not in data or "country" not in data or "age" not in data:
         abort(400, description="Invalid data")
-    
+
     new_id = max(students.keys()) + 1 if students else 1
     students[new_id] = {
-        "name": data['name'],
-        "country": data['country'],
-        "age": data['age']
+        "name": data["name"],
+        "country": data["country"],
+        "age": data["age"],
     }
-    return jsonify({"id": new_id}), 201 
+    return jsonify({"id": new_id}), 201
 
 
 # Mise à jour d'un étudiant existant
-@app.route('/students/<int:student_id>', methods=['PUT'])
+@app.route("/students/<int:student_id>", methods=["PUT"])
 def update_student(student_id):
     if student_id not in students:
         abort(404, description="Student not found")
@@ -54,15 +54,15 @@ def update_student(student_id):
 
     # Mise à jour des champs fournis
     student = students[student_id]
-    student['name'] = data.get('name', student['name'])
-    student['country'] = data.get('country', student['country'])
-    student['age'] = data.get('age', student['age'])
+    student["name"] = data.get("name", student["name"])
+    student["country"] = data.get("country", student["country"])
+    student["age"] = data.get("age", student["age"])
 
     return jsonify(student)
 
 
 # Suppression
-@app.route('/students/<int:student_id>', methods=['DELETE'])
+@app.route("/students/<int:student_id>", methods=["DELETE"])
 def delete_student(student_id):
     if student_id in students:
         del students[student_id]
@@ -71,5 +71,5 @@ def delete_student(student_id):
         abort(404, description="Student not found")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

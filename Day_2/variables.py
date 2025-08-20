@@ -1,6 +1,6 @@
-#Jour 2: 30 Days of Python Programming
+# Jour 2: 30 Days of Python Programming
 
-#Exercice niveau 1
+# Exercice niveau 1
 
 Prénom = "Moukitat"
 Nom = "LASSISI"
@@ -15,9 +15,9 @@ IS_light_on = "Yes"
 M, L, W, B = 1, 2, 3, 4
 
 
-#Exercice niveau 2
+# Exercice niveau 2
 
-#1 les types des variables
+# 1 les types des variables
 print(type(Prénom))
 print(type(Nom))
 print(type(Nom_complet))
@@ -30,60 +30,60 @@ print(type(is_true))
 print(type(IS_light_on))
 print(type(M))
 
-#2
+# 2
 print(len(Prénom))
 
-#3
-print(len(Prénom)>len(Nom))
+# 3
+print(len(Prénom) > len(Nom))
 
-#4
+# 4
 num_one = 5
 num_two = 4
 
-#5 addition
+# 5 addition
 som = num_one + num_two
 print(som)
 
-#6 soustration
+# 6 soustration
 soustr = num_one - num_two
 print(soustr)
 
-#7 multiplication
+# 7 multiplication
 prod = num_one * num_two
 print(prod)
 
-#8 division
+# 8 division
 div = num_one / num_two
 print(div)
 
-#9 modulo
+# 9 modulo
 mod = num_two % num_one
 print(mod)
 
-#10 floor_division
+# 10 floor_division
 floor_division = num_one // num_two
 print(floor_division)
 
-#12
+# 12
 rayon = 30
 pi = 3.1416
 
 # i
-area_of_circle = pi * rayon ** 2
+area_of_circle = pi * rayon**2
 
 # ii
 circum_of_circle = 2 * pi * rayon
 
 # iii
 rayon_user = float(input("Entrez le rayon du cercle : "))
-area_user = pi * rayon_user ** 2
+area_user = pi * rayon_user**2
 print(area_user)
 
-#13
+# 13
 user_Prénom = input("Entrez votre prénom : ")
 user_Nom = input("Entrez votre nom : ")
 user_Pays = input("Entrez votre pays : ")
 user_âge = int(input("Entrez votre âge : "))
 
-#14 (voir ficher shell.py)
+# 14 (voir ficher shell.py)
 help("keywords")

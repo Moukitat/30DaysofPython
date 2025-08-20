@@ -1,13 +1,13 @@
-        #Exercice jour9: Niveau1
+# Exercice jour9: Niveau1
 
-#1-)
+# 1-)
 age = int(input("Entrez votre âge: "))
 if age >= 18:
     print("Vous êtes assez vieux pour apprendre à conduire.")
 else:
     print(f"Vous avez besoin de {18 - age} ans de plus pour apprendre à conduire.")
 
-#2-)
+# 2-)
 my_age = 19
 your_age = int(input("Entrez votre âge: "))
 diff = abs(my_age - your_age)
@@ -19,7 +19,7 @@ elif your_age < my_age:
 else:
     print("Nous avons le même âge.")
 
-#3-)
+# 3-)
 x = int(input("Entrez un premier nombre: "))
 y = int(input("Entrez un second nombre: "))
 
@@ -30,9 +30,9 @@ elif x < y:
 else:
     print(f"{x} est égal à {y}")
 
-            #Niveau 2
+    # Niveau 2
 
-#1-)
+# 1-)
 note = int(input("Entrez votre note: "))
 
 if 80 <= note <= 100:
@@ -47,7 +47,7 @@ else:
     print("F")
 
 
-#2-)
+# 2-)
 mois = input("Entrez un mois: ")
 if mois in ["Septembre", "Octobre", "Novembre"]:
     print("Automne")
@@ -61,8 +61,8 @@ else:
     print("Mois invalide")
 
 
-#3-)
-fruits = ['banana', 'orange', 'mango', 'lemon']
+# 3-)
+fruits = ["banana", "orange", "mango", "lemon"]
 nouveau = input("Entrez un fruit: ").lower()
 
 if nouveau in fruits:
@@ -71,38 +71,36 @@ else:
     fruits.append(nouveau)
     print("Fruit ajouté. Nouvelle liste:", fruits)
 
-
-                    #Niveau 3
+    # Niveau 3
 person = {
-    'first_name': 'Asabeneh',
-    'last_name': 'Yetayeh',
-    'age': 250,
-    'country': 'Finland',
-    'is_married': True,
-    'compétences': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-    'address': {
-        'street': 'Space street',
-        'zipcode': '02210'
-    }
+    "first_name": "Asabeneh",
+    "last_name": "Yetayeh",
+    "age": 250,
+    "country": "Finland",
+    "is_married": True,
+    "compétences": ["JavaScript", "React", "Node", "MongoDB", "Python"],
+    "address": {"street": "Space street", "zipcode": "02210"},
 }
 
-if 'compétences' in person:
-    compétences = person['compétences']
-    intermédiaire = compétences[len(compétences)//2]
+if "compétences" in person:
+    compétences = person["compétences"]
+    intermédiaire = compétences[len(compétences) // 2]
     print("Les compétences intermédiaires :", intermédiaire)
 
-if 'Python' in person.get('compétences', []):
+if "Python" in person.get("compétences", []):
     print("La personne a des compétences Python .")
 
-compétences = person['compétences']
-if compétences == ['JavaScript', 'React']:
+compétences = person["compétences"]
+if compétences == ["JavaScript", "React"]:
     print("Il est un développeur frontal")
-elif all(y in compétences for y in ['Node', 'Python', 'MongoDB']):
+elif all(y in compétences for y in ["Node", "Python", "MongoDB"]):
     print("Il est un développeur backend")
-elif all(y in compétences for y in ['React', 'Node', 'MongoDB']):
+elif all(y in compétences for y in ["React", "Node", "MongoDB"]):
     print("Il est un développeur fullstack")
 else:
     print("Titre inconnu")
 
-if person['is_married'] and person['country'] == 'Finland':
-    print(f"{person['first_name']} {person['last_name']} vit en Finlande. Il est marié.")
+if person["is_married"] and person["country"] == "Finland":
+    print(
+        f"{person['first_name']} {person['last_name']} vit en Finlande. Il est marié."
+    )
